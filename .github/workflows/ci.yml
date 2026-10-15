@@ -1,4 +1,4 @@
-name: Security CI Pipeline
+name: Security CI
 
 on:
   push:
@@ -11,36 +11,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. سحب الكود من المستودع
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2. تثبيت بايثون
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      # 3. تثبيت المكتبات
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install bandit safety
 
-      # 4. تشغيل Bandit (SAST)
       - name: Run Bandit (SAST)
         run: |
           bandit -r . -x ./venv -f json -o bandit-report.json || true
-          bandit -r . -x ./venv || true
+        continue-on-error: true
 
-      # 5. تشغيل Safety (SCA)
       - name: Run Safety (SCA)
         run: |
           safety check -r requirements.txt --json > safety-report.json || true
-          safety check -r requirements.txt || true
+        continue-on-error: true
 
-      # 6. رفع التقارير كملفات مرفقة
       - name: Upload security reports
         uses: actions/upload-artifact@v4
         with:
