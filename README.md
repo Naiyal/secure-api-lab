@@ -1,3 +1,5 @@
+```
+
 # Secure REST API with CI/CD
 
 ## Описание проекта
@@ -26,7 +28,7 @@
 ```python
 user = User.query.filter_by(username=data['username']).first()
 
-
+```
 
 
 2. Защита от XSS
@@ -48,14 +50,14 @@ Bandit (SAST): Статический анализ кода Python на нали
 Safety (SCA): Анализ зависимостей на известные уязвимости (CVE).
 
 
-![alt text](image.png)
+https://image.png/
 
-![alt text](2.jpg)
+https://2.jpg/
 
-![alt text](3.jpg)
+https://3.jpg/
 
 Запуск проекта локально
-bash
+```
 # Клонирование репозитория
 git clone https://github.com/Naiyal/secure-api-lab.git
 cd secure-api-lab
@@ -69,5 +71,7 @@ pip install -r requirements.txt
 
 # Запуск
 python app.py
+
+```
 Автор
 Наял М.Фахд, группа 3410, ИТМО, 2026 г.
