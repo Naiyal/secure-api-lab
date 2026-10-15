@@ -48,11 +48,11 @@ Bandit (SAST): Статический анализ кода Python на нали
 Safety (SCA): Анализ зависимостей на известные уязвимости (CVE).
 
 
-![alt text](https://user-images.githubusercontent.com/.../image.png)
+![alt text](https://github.com/Naiyal/secure-api-lab/assets/image.png)
 
-![alt text](https://user-images.githubusercontent.com/.../2.jpg)
+![alt text](https://github.com/Naiyal/secure-api-lab/assets/2.jpg)
 
-![alt text](https://user-images.githubusercontent.com/.../3.jpg)
+![alt text](https://github.com/Naiyal/secure-api-lab/assets/3.jpg)
 
 Запуск проекта локально
 bash
